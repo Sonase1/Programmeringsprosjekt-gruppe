@@ -17,43 +17,43 @@ public class DayMain {
         System.out.println();
 
         System.out.println("Oppgave a:");
-        DailyPower.printPowerPrices(DayPowerData.powerprices_day);
+        DailyPower.printPowerPrices(powerprices_day);
 
 
         System.out.println("Oppgave b: ");
-        DailyPower.printPowerUsage(DayPowerData.powerusage_day);
+        DailyPower.printPowerUsage(powerusage_day);
 
 
         System.out.println("Oppgave c: ");
-        double stromforbruk = DailyPower.computePowerUsage(DayPowerData.powerusage_day);
+        double stromforbruk = DailyPower.computePowerUsage(powerusage_day);
         System.out.println("totalt strømforbruk en dag er " + stromforbruk + "\n");
 
         System.out.println("Oppgave d: ");
-        double dagsutgift = DailyPower.computeSpotPrice(DayPowerData.powerusage_day, DayPowerData.powerprices_day);
+        double dagsutgift = DailyPower.computeSpotPrice(powerusage_day, powerprices_day);
         System.out.printf( "Totalkostnad for strøm denne dagen er: %.2f kr%n", dagsutgift);
         System.out.println();
 
         System.out.println("Oppgave e: ");
-        for (int i = 0; i<DayPowerData.powerusage_day.length; i++){
-            double support = DailyPower.getSupport(DayPowerData.powerusage_day[i], DayPowerData.powerprices_day[i]);
+        for (int i = 0; i<powerusage_day.length; i++){
+            double support = DailyPower.getSupport(powerusage_day[i], powerprices_day[i]);
             support = Math.round(support * 100.0) / 100.0;
             System.out.println("Du får " + support + "kr i støtte kl: " + i + ":00 \n");
         }
 
         System.out.println("Oppgave f: ");
-        double powerSupport = DailyPower.computePowerSupport(DayPowerData.powerusage_day, DayPowerData.powerprices_day);
+        double powerSupport = DailyPower.computePowerSupport(powerusage_day, powerprices_day);
         System.out.printf("%.2f kr støtte i dag.%n%n", powerSupport);
 
         System.out.println("Oppgave g: ");
-        double norgesPris = DailyPower.computeNorgesPrice(DayPowerData.powerusage_day);
+        double norgesPris = DailyPower.computeNorgesPrice(powerusage_day);
         System.out.println("Du må betale " + norgesPris + "kr pga norgespris i dag \n");
 
         System.out.println("Oppgave h: ");
-        double maxUsage = DailyPower.findPeakUsage(DayPowerData.powerusage_day);
+        double maxUsage = DailyPower.findPeakUsage(powerusage_day);
         System.out.print("Den timen du brukte mest straum, brukte du: " + maxUsage + " kWh \n");
 
         System.out.println("Oppgave i: ");
-        double gForbruk = DailyPower.findAvgPower(DayPowerData.powerusage_day);
+        double gForbruk = DailyPower.findAvgPower(powerusage_day);
         System.out.println("gjennomsnittleg strømforbruk i dag er " + gForbruk + " kWh \n");
 
 
