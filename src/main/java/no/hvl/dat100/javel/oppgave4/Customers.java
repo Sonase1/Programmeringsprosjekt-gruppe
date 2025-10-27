@@ -8,9 +8,7 @@ public class Customers {
 
     // a) Complete constructor
     public Customers(int size) {
-
-        // TODO
-
+        this.customers = new Customer[size];
     }
 
     // b) count number of non-null references
@@ -19,20 +17,32 @@ public class Customers {
 
         int count = 0;
 
-        // TODO
-
+        for (Customer c : this.customers) {
+            if (c != null) {
+                count++;
+            }
+        }
         return count;
     }
 
     // c) return reference to customer with given id (if exists)
     public Customer getCustomer(int customer_id) {
 
+        /*Customer c = null;
+        for (Customer d : customers){
+            if ( d != null && d.getCustomer_id()==customer_id){
+                c = d;
+            }
+        }
+        return c;
+        */
+
         boolean funnet = false;
         Customer c = null;
+        while (!funnet ){
 
-        // TODO
+        }
 
-        return c;
     }
 
     // d) add a customer to the reference table
